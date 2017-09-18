@@ -31,10 +31,8 @@ function onGuyKill() {
 
 function onGameOver(){
   if(!guys.length){
-    winSound.loop = false;
     winSound.play();
   } else {
-    loseSound.loop = false;
     loseSound.play();
   }
 }

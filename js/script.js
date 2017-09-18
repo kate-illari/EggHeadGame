@@ -69,12 +69,8 @@ function play() {
     }
   }
   cleanUp(['eggs', 'guys']);
-  if(totalEggs < 0 || !guys.length){
+  if(totalEggs <= 0 && !eggs.length || !guys.length){
     eventHandler.fireEvent('gameOver');
-    gameOver.showGameOver();
-    setTimeout(function () {
-      gameActive = false;
-    }, 800)
   }
 }
 
