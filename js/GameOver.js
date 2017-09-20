@@ -1,13 +1,17 @@
-eventHandler.addListener('gameOver', onGameOver);
-
-
 function GameOver(stage) {
+  var me = this;
   this.textSprite = new PIXI.Text(
     "",
     {fontFamily: "Arial", fontSize: 72, fill: "red", fontWeight: 700}
   );
   this.textSprite.position.set(150, 150);
   this.textSprite.visible = false;
+  this.onGameOver = function(){
+    me.showGameOver();
+    setTimeout(function () {
+      gameActive = false;
+    }, 800)
+  };
   this.showGameOver = function () {
     var text;
     if(!guys.length){
@@ -19,12 +23,5 @@ function GameOver(stage) {
     this.textSprite.text = text;
   };
   stage.addChild(this.textSprite);
-}
-
-
-function onGameOver() {
-  gameOver.showGameOver();
-  setTimeout(function () {
-    gameActive = false;
-  }, 800)
+  eventHandler.addListener('gameOver', me.onGameOver);
 }
