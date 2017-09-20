@@ -1,3 +1,6 @@
+eventHandler.addListener('eggShoot', onEggShoot);
+
+
 function EggCounter(stage) {
   this.textSprite = new PIXI.Text(
     "eggs left: " + totalEggs,
@@ -6,7 +9,6 @@ function EggCounter(stage) {
   this.textSprite.position.set(500, 10);
 
   this.updateCounter = function () {
-    console.log(totalEggs);
 
     if(totalEggs <= 0){
       this.textSprite.text = "No more eggs!";
@@ -16,4 +18,9 @@ function EggCounter(stage) {
     }
   };
   stage.addChild(this.textSprite);
+}
+
+
+function onEggShoot() {
+  eggCounter.updateCounter();
 }

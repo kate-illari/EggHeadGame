@@ -16,7 +16,7 @@ PIXI.loader
 var bird,
     numberOfGuys = 3,
     eggs = [], guys = [],
-    totalEggs = 15,
+    totalEggs = 25,
     eggCounter,
     gameActive = true,
     gameOver;

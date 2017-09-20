@@ -1,3 +1,6 @@
+eventHandler.addListener('gameOver', onGameOver);
+
+
 function GameOver(stage) {
   this.textSprite = new PIXI.Text(
     "",
@@ -16,4 +19,12 @@ function GameOver(stage) {
     this.textSprite.text = text;
   };
   stage.addChild(this.textSprite);
+}
+
+
+function onGameOver() {
+  gameOver.showGameOver();
+  setTimeout(function () {
+    gameActive = false;
+  }, 800)
 }
